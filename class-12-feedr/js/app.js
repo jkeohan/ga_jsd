@@ -104,6 +104,7 @@ feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$
             obj = {}
         })
       console.log($scope.activeSource)
+      //console.log($scope.activeSource[0].title)
         //setTimeout(function() { $('.loader').addClass("hidden") },3000)
       })//done
        

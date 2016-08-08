@@ -25,7 +25,7 @@
         <![endif]-->
 
         <header>
-          <section class="container" ng-controller="apiCtrl">
+          <section class="container">
             <a href="#"><h1>Feedr</h1></a>
             <nav>
               <ul>
@@ -58,7 +58,7 @@
         </div>
         <!-- ARTICLE CONTENT -->
   
-        <section id="main" class="container" >
+        <section id="main" class="container" ng-controller="apiCtrl">
           <article class="article" ng-repeat="item in activeSource">
             <section class="featuredImage">
               <img src="" alt="" />
