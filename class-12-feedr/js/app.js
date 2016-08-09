@@ -147,5 +147,7 @@ feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$
     };
 }])
 
+var help = models
+help.hello("world")
 
   

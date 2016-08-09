@@ -16,7 +16,15 @@ This is a breakdown of the top level functionality for building the Feedr applic
 
 ## jQuery Functional Requirements
 
+## Additional Functionality
+
+### Combining Two JS Objects
+
+In order to create one giant object for all the Feedr JSON sources I decided to merge them all into one object. Research led me to this site ["Merge-Two-JS-Objects"](https://plainjs.com/javascript/utilities/merge-two-javascript-objects-19/)
+
 ## Issues and Resolutions
+
+## Change Log
 
 This section will contain a list of all issues encountered and their resolution
 
