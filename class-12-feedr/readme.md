@@ -18,7 +18,7 @@ This section will contain a list of all issues encountered and their resolution
 **RESOLUTION**: Missing comma after first object in sources {} object
 
 **ERROR**:  app.js:55 Uncaught SyntaxError: Unexpected identifier
-$.get("https://accesscontrolalloworiginall.herokuapp.com/http://digg.com/api/news/popular.json",                                                                                          **RESOLUTION**: Missing closing } after both the Digg and Reddit sources sub objects
+$.get("https://accesscontrolalloworiginall.herokuapp.com/http://digg.com/api/news/popular.json",                                                                                               **RESOLUTION**: Missing closing } after both the Digg and Reddit sources sub objects
 
 ERROR: angular.js:68 Uncaught Error: [$injector:modulerr] Failed to instantiate module feedrApp due to: Error: [$injector:nomod] Module 'feedrApp' is not available! You either misspelled the module name or forgot to load it. If registering a module ensure that you specify the dependencies as the second argument.
 
