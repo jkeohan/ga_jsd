@@ -14,8 +14,7 @@ This is a breakdown of the top level functionality for building the Feedr applic
 
 This section will contain a list of all issues encountered and their resolution
 
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier
-
+**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
 **RESOLUTION**: Missing comma after first object in sources {} object
 
 ERROR:  app.js:55 Uncaught SyntaxError: Unexpected identifier
