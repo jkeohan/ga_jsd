@@ -1,18 +1,7 @@
 /*
   Please add all Javascript code to this file.
 */
-// console.log("inside app.js")
-//     $.get("https://accesscontrolalloworiginall.herokuapp.com/http://digg.com/api/news/popular.json", function(results) {
 
-//         console.log(results);
-
-//         results.data.feed.forEach(function(result){
-//             $("ul").append('<li>'+result.content.title+'</li>')
-//         })
-
-//     })
-
-console.log("inside app.js")
 var feedrApp = angular.module('feedrApp', ['ui.router', 'ngAnimate'])
 
 //used for routing
@@ -28,30 +17,28 @@ feedrApp.config(function($stateProvider, $urlRouterProvider) {
     //   templateUrl:"chloropleth/mapping.html"
     // })
 })
-// app.controller('MyController', function($http) {
-//     var vm = this;
-//     vm.mydata = [];
-
-//     $http.get(URI)
-//         .then(function(result) {
-//           console.log(result);
-//           vm.mydata = result.data;
-//          });
-
-
 
 feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$rootScope,$http){
-
+      $scope.test = [];
       $scope.sources = {};
+      $scope.sourceKeys; 
       $scope.activeSource = [];
       var url = "http://digg.com/api/news/popular.json"
 
       $scope.sources = {
         Mashable: {
-          url: "http://digg.com/api/news/popular.json",
+          url: "http://mashable.com/stories.json",
           keys: {
-            articles: [],
-            image: "feature_image"
+            articles: 'news',
+            title: 'title',
+            image: "feature_image",
+            rank: 'shares.total',
+            tag: 'channel',
+            description: 'content',
+            link: 'link'
+          },
+          data: {
+            articles: []
           }
         },
         Digg: {
@@ -59,10 +46,14 @@ feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$
           //url: 'http://digg.com/api/news/popular.json',
           keys: {
             articles: [],
+            content: 'content',
             title: "title",
-            image: "media.images[0].url",
+            image: "['media']['images'][0][url]",
             rank: "diggs.count",
             description: "description"
+          },
+          data: {
+            articles: [],
           }
         },
          Reddit: {
@@ -73,6 +64,9 @@ feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$
           }
         }
       }
+
+    $scope.sourceKeys = Object.keys($scope.sources)
+    //console.log($scope.sourceKeys)
     //if search is !empty show currently choosen feed
     //if search is true than filter article titles for search term
     //this will require attaching event listener to input field
@@ -80,42 +74,78 @@ feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$
     // $.get($scope.url)
     // .done(function(response) { console.log(response)})
     // .fail(function(response) {console.log(response )})
-    console.log($scope.sources.Digg)
+    //console.log($scope.sources.Digg)
+    function buildObject () {};
+    function updateSearchName(sourceName) { 
+      $('.sourceName').html(sourceName)
+    };
+    // this 
+    $scope.overlay = function(source) {
+      $('#popUp').removeClass()
+      $('#popUp').find('h1').html(source.title)
+      $('#popUp').find('p').html(source.description)
+      $('#popUp').find('.popUpAction').attr('href',source.url)
+    }
 
-    function getContent(url,source){
+    $scope.getContent =  function(url,source){
+      console.log(source)
+      $scope.source = source;
 
       //      $.get(url.url,function(response) {
        
       //    // $('.loader').removeClass("hidden")
       //     console.log("response is: ", response);
-      // })
-  
-        $http.get(url.url)
+
+      var mediaSource = $scope.sources[source]
+      console.log(mediaSource)
+      $http.get(url.url)
         .then(function(response) {
+        //console.log(response.data.data.feed)
+          $scope.test = response.data.data.feed
           var articles = response.data.data.feed
           var obj = {}
           $.each(articles, function(i,e){
+
             obj.title = articles[i].content.title
-            obj.img = articles[i].content.media.images[0].url
+            //obj.img = articles[i][mediaSource][image]
+            obj.img = articles[i]['content']['media']['images'][0].url
             obj.description = articles[i].content.description
             obj.url = articles[i].content.url
-            $scope.sources.Digg.keys.articles.push(obj)
+            obj.count = articles[i].diggs.count
+            obj.tags = articles[i].content.tags
+            $scope.sources[source].data.articles.push(obj)
             $scope.activeSource.push(obj)
             obj = {}
-        })
-      console.log($scope.activeSource)
+          })//each
+
       //console.log($scope.activeSource[0].title)
         //setTimeout(function() { $('.loader').addClass("hidden") },3000)
-      })//done
+          updateSearchName(source)
+        }, function(response) {
+        //Second function handles error
+          alert("Something went wrong");
+        })//then
+
+        //this doesn't work while inside the controller
+        //opted to use ng-click
+        // $('.feeds').on("click", "li", function(){
+        //     var val = $(this).val()
+        //    console.log(val,$scope.sources[val])
+        //   getContent($scope.sources[val],val)
+        // })
        
     }//function
-    getContent($scope.sources.Digg,"Digg")
 
-    //$.get("https://accesscontrolalloworiginall.herokuapp.com/http://digg.com/api/news/popular.json",function(response) {
+   // $('.feeds').on("click", "li", function(){
+   //          var val = $(this).val()
+   //         console.log(val,$scope.sources[val])
+   //        getContent($scope.sources[val],val)
+   //      })
 
     $scope.resetAll = function() {
       $rootScope.totalTip = 0;
     };
-
 }])
 
+
+  

@@ -1,6 +1,6 @@
-## Lesson Breakdown 
+## Project Overview
 
-This is a breakdown of the top level functionality for building the Feedr application
+This is a breakdown of the top level functionality for building the Feedr application.
 
 * Our reader will pull feeds from various API's such as Mashable, Reddit & Digg
 
@@ -14,7 +14,7 @@ This is a breakdown of the top level functionality for building the Feedr applic
 
 This section will contain a list of all issues encountered and their resolution
 
-ERROR: app.js:34 Uncaught SyntaxError: Unexpected identifier
+<font color="red">ERROR</font>: app.js:34 Uncaught SyntaxError: Unexpected identifier
 RESOLUTION: Missing comma after first object in sources {} object
 
 ERROR:  app.js:55 Uncaught SyntaxError: Unexpected identifier
@@ -29,3 +29,15 @@ RESOLUTION: Mispelled Dig..should be Digg
 
 ERROR: console.log(response + ".data") outputs [object Object].data  
 RESOLUTION: console.log is converting response into a string and outputing it's object type
+
+ERROR: GET http://localhost:8080/%7B%7Bitem.img%7D%7D 404 (Not Found)
+RESOLUTION: Updated src tag for images to be ng-src.  This causes angular to wait and populate
+that element once the data has been retrieved
+
+LOGIC ISSUES
+
+ISSUE: clicking on X closes popup, displays article page but then updates pages to article url
+RESOLUTION: reconfigured jquery from $('#popUp').find('a') to $('#popUp').find('.popUpAction').attr('href',source.url)
+
+ISSUE: 
+

@@ -5,11 +5,13 @@
 }
 
 #popUp {
+  margin:0 auto;
   opacity: 0.95;
   position: absolute;
-  top: 0;
+  top:64px;
   left: 0;
-  width: 100%;
+  right: 0;
+  width: 80%;
   height: 100%;
   background:  #fff;
 }
@@ -122,7 +124,7 @@ header #search input {
 }
 
 header #search.active input {
-  width: 160px;
+  width: 200px;
   padding: 8px 10px;
   visibility: visible;
 }
@@ -226,6 +228,8 @@ nav ul ul li {
 .article .articleContent h6 {
   margin-top: 0;
   color: #666;
+  display:inline;
+  margin-right:10px;
 }
 
 .article .impressions {
