@@ -24,7 +24,6 @@ Originally configured loading gif using the following which was placed inside th
  $('.loader').removeClass("hidden")
  //code to build and populate object which ng-repeat uses to create the articles
   setTimeout(function() { $('.loader').addClass("hidden") },3000)
-alert(s);
 ```
 http://stackoverflow.com/questions/15033195/showing-spinner-gif-during-http-request-in-angular
 
