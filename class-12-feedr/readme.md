@@ -31,7 +31,8 @@ The above code was only a temporary solution to simulate waiting for the data bu
 ### Infinite Scolling
 Here are a list of possible solutions to implement infinite scolling:
 * [jQuery Infinite Scolling](https://www.sitepoint.com/jquery-infinite-scrolling-demos/)
-* Codepen with a working solution: [Infinite Scrolling Through Images](http://codepen.io/SitePoint/full/NxZKPR/)
+* [Infinite Scrolling Through Images](http://codepen.io/SitePoint/full/NxZKPR/) workign solution via codepen
+
 ### Combining Two JS Objects
 
 In order to create one giant object for all the Feedr JSON sources I decided to merge them all into one object. Research led me to this site ["Merge-Two-JS-Objects"](https://plainjs.com/javascript/utilities/merge-two-javascript-objects-19/)
