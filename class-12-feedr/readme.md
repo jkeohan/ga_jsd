@@ -28,6 +28,9 @@ Originally configured loading gif using the following which was placed inside th
 
 The above code was only a temporary solution to simulate waiting for the data but a better approach would be to add .finally(function(){}) and add remove the loader from there as per this [stackoverflow](http://stackoverflow.com/questions/15033195/showing-spinner-gif-during-http-request-in-angular)
 
+### Infinite Scolling
+Here are a list of possible solutions to implement infinite scolling:
+* [jQuery Infinite Scolling](https://www.sitepoint.com/jquery-infinite-scrolling-demos/)
 ### Combining Two JS Objects
 
 In order to create one giant object for all the Feedr JSON sources I decided to merge them all into one object. Research led me to this site ["Merge-Two-JS-Objects"](https://plainjs.com/javascript/utilities/merge-two-javascript-objects-19/)
