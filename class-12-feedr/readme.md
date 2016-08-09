@@ -14,8 +14,8 @@ This is a breakdown of the top level functionality for building the Feedr applic
 
 This section will contain a list of all issues encountered and their resolution
 
-<font color="red">ERROR</font>: app.js:34 Uncaught SyntaxError: Unexpected identifier
-RESOLUTION: Missing comma after first object in sources {} object
+**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier
+**RESOLUTION**: Missing comma after first object in sources {} object
 
 ERROR:  app.js:55 Uncaught SyntaxError: Unexpected identifier
 $.get("https://accesscontrolalloworiginall.herokuapp.com/http://digg.com/api/news/popular.json", 
