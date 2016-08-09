@@ -18,6 +18,16 @@ This is a breakdown of the top level functionality for building the Feedr applic
 
 ## Additional Functionality
 
+### Toggle Spinning Gif While Retrieving JSON
+Originally configured loading gif using the following which was placed inside the $http.get().then() promise:
+```javascript
+ $('.loader').removeClass("hidden")
+ //code to build and populate object which ng-repeat uses to create the articles
+  setTimeout(function() { $('.loader').addClass("hidden") },3000)
+alert(s);
+```
+http://stackoverflow.com/questions/15033195/showing-spinner-gif-during-http-request-in-angular
+
 ### Combining Two JS Objects
 
 In order to create one giant object for all the Feedr JSON sources I decided to merge them all into one object. Research led me to this site ["Merge-Two-JS-Objects"](https://plainjs.com/javascript/utilities/merge-two-javascript-objects-19/)
