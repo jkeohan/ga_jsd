@@ -31,7 +31,7 @@ The above code was only a temporary solution to simulate waiting for the data bu
 ### Infinite Scolling
 Here are a list of possible solutions to implement infinite scolling:
 * [jQuery Infinite Scolling](https://www.sitepoint.com/jquery-infinite-scrolling-demos/)
-* [Infinite Scrolling Through Images](http://codepen.io/SitePoint/full/NxZKPR/) workign solution via codepen
+* [Infinite Scrolling Through Images](http://codepen.io/SitePoint/full/NxZKPR/) working solution via codepen
 
 ### Combining Two JS Objects
 
