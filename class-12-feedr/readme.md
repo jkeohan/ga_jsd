@@ -25,7 +25,8 @@ Originally configured loading gif using the following which was placed inside th
  //code to build and populate object which ng-repeat uses to create the articles
   setTimeout(function() { $('.loader').addClass("hidden") },3000)
 ```
-http://stackoverflow.com/questions/15033195/showing-spinner-gif-during-http-request-in-angular
+
+The above code was only a temporary solution to simulate waiting for the data but a better approach would be to add .finally(function(){}) and add remove the loader from there as per this [stackoverflow](http://stackoverflow.com/questions/15033195/showing-spinner-gif-during-http-request-in-angular)
 
 ### Combining Two JS Objects
 

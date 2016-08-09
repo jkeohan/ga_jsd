@@ -74,7 +74,7 @@ feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$
     // $.get($scope.url)
     // .done(function(response) { console.log(response)})
     // .fail(function(response) {console.log(response )})
-    
+
     //console.log($scope.sources.Digg)
     function buildObject () {};
     function updateSearchName(sourceName) { 
@@ -91,12 +91,12 @@ feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$
     $scope.getContent =  function(url,source){
       console.log(source)
       $scope.source = source;
-
+       $('.loader').removeClass("hidden")
       var mediaSource = $scope.sources[source]
       console.log(mediaSource)
       $http.get(url.url)
         .then(function(response) {
-          $('.loader').removeClass("hidden")
+         
         //console.log(response.data.data.feed)
           $scope.test = response.data.data.feed
           var articles = response.data.data.feed
@@ -116,11 +116,13 @@ feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$
           })//each
 
         //console.log($scope.activeSource[0].title)
-        setTimeout(function() { $('.loader').addClass("hidden") },3000)
+        //setTimeout(function() { $('.loader').addClass("hidden") },3000)
           updateSearchName(source)
         }, function(response) {
         //Second function handles error
           alert("Something went wrong");
+        }).finally(function(){
+          $('.loader').addClass("hidden")
         })//then
 
         //this doesn't work while inside the controller
