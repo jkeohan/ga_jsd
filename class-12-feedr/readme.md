@@ -10,6 +10,12 @@ This is a breakdown of the top level functionality for building the Feedr applic
 
 * Clicking an article will render a modal with more info
 
+## Additional Libraries
+
+## JSON Data Keys
+
+## jQuery Functional Requirements
+
 ## Issues and Resolutions
 
 This section will contain a list of all issues encountered and their resolution
