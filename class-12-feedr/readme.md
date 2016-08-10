@@ -37,9 +37,9 @@ Here are a list of possible solutions to implement infinite scolling:
 
 In order to create one giant object for all the Feedr JSON sources I decided to merge them all into one object. Research led me to this site ["Merge-Two-JS-Objects"](https://plainjs.com/javascript/utilities/merge-two-javascript-objects-19/)
 
-## Issues and Resolutions
-
 ## Change Log
+
+## Issues and Resolutions
 
 This section will contain a list of all issues encountered and their resolution
 

@@ -70,7 +70,8 @@ feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$
     //if search is !empty show currently choosen feed
     //if search is true than filter article titles for search term
     //this will require attaching event listener to input field
-    //and calling a function that filters and then renders results 
+    //and calling a function that filters and then renders results
+
     // $.get($scope.url)
     // .done(function(response) { console.log(response)})
     // .fail(function(response) {console.log(response )})
@@ -94,6 +95,7 @@ feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$
        $('.loader').removeClass("hidden")
       var mediaSource = $scope.sources[source]
       console.log(mediaSource)
+
       $http.get(url.url)
         .then(function(response) {
          
@@ -115,7 +117,7 @@ feedrApp.controller('apiCtrl', ['$scope','$rootScope','$http', function($scope,$
             obj = {}
           })//each
 
-        //console.log($scope.activeSource[0].title)
+        console.log("$scope.....", $scope.activeSource[0].title)
         //setTimeout(function() { $('.loader').addClass("hidden") },3000)
           updateSearchName(source)
         }, function(response) {
